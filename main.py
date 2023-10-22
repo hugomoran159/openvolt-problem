@@ -26,6 +26,8 @@ half_hourly_consumption = pd.DataFrame(get_response(url2).json()['data'])
 
 half_hourly_consumption.drop(half_hourly_consumption.index[-1], inplace=True)
 
+total_consumption_half_hourly = half_hourly_consumption['consumption'].astype(float).sum()
+print(total_consumption_half_hourly)
 # 14 day limit is not enforced 
 carbon_request = requests.get('https://api.carbonintensity.org.uk/intensity/2023-01-01T00:30Z/2023-02-01T00:00Z')
 
@@ -33,6 +35,7 @@ carbon_data = carbon_request.json()
 
 half_hourly_carbon = pd.DataFrame(carbon_data['data'])
 half_hourly_carbon = pd.json_normalize(half_hourly_carbon['intensity'])
+
 
 
 half_hourly_consumption['consumption'] = half_hourly_consumption['consumption'].astype(int)
