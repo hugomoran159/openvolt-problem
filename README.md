@@ -5,7 +5,7 @@
 
 - Total kWh consumed in January 2023: 100,195 kWh
 - Note: There is a discrepency between the total kWh calculated by taking a period total and when adding the half hourly segments.
-- Total kWh when half hourly consumption summed = 100,281
+- Total kWh when half hourly consumption summed = 100,281 kWh
 
 ## CO2 Emissions
 
